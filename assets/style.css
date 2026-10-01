@@ -1,0 +1,221 @@
+/* ------------------------------------------------------------------
+   style.css
+   Restrained, professional styling for the Parallel Log File Analyzer.
+   Goal: look like a polished undergraduate software project, not a
+   generic AI-generated dashboard. No gradients, no neon, no heavy
+   animation, no glassmorphism.
+   ------------------------------------------------------------------ */
+
+/* ---- Overall page ---- */
+.block-container {
+    max-width: 1100px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+html, body, [class*="css"] {
+    font-family: "Segoe UI", "Source Sans Pro", Arial, sans-serif;
+}
+
+/* ---- Page header ---- */
+.app-header {
+    padding-bottom: 0.9rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid #E3E6EA;
+}
+.app-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1F2A33;
+    margin-bottom: 0.15rem;
+}
+.app-header p {
+    font-size: 0.98rem;
+    color: #5B6570;
+    margin: 0;
+}
+
+/* ---- Section headings inside pages ---- */
+.section-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1F2A33;
+    margin-top: 1.6rem;
+    margin-bottom: 0.6rem;
+}
+.section-subtext {
+    font-size: 0.92rem;
+    color: #5B6570;
+    margin-bottom: 1rem;
+}
+
+/* ---- Sidebar ---- */
+section[data-testid="stSidebar"] {
+    background-color: #F5F6F8;
+    border-right: 1px solid #E3E6EA;
+}
+section[data-testid="stSidebar"] .block-container {
+    padding-top: 1.6rem;
+}
+section[data-testid="stSidebar"] h3 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #7A8390;
+    margin-bottom: 0.4rem;
+}
+section[data-testid="stSidebar"] .stRadio label {
+    font-size: 0.95rem;
+}
+section[data-testid="stSidebar"] hr {
+    margin: 1.1rem 0;
+    border-color: #DEE2E6;
+}
+
+/* ---- Metric cards (custom HTML, not st.metric, for full control) ---- */
+.metric-card-row {
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+}
+.metric-card {
+    flex: 1 1 150px;
+    background: #FFFFFF;
+    border: 1px solid #E3E6EA;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(15, 23, 32, 0.04);
+    padding: 0.95rem 1.1rem;
+}
+.metric-card .metric-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #7A8390;
+    margin-bottom: 0.3rem;
+}
+.metric-card .metric-value {
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: #1F2A33;
+    line-height: 1.2;
+}
+.metric-card.accent-info .metric-value { color: #2E6DA4; }
+.metric-card.accent-warning .metric-value { color: #B8860B; }
+.metric-card.accent-error .metric-value { color: #A5333A; }
+
+/* ---- Generic content card / container ---- */
+.content-card {
+    background: #FFFFFF;
+    border: 1px solid #E3E6EA;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(15, 23, 32, 0.04);
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.1rem;
+}
+.content-card h4 {
+    margin-top: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1F2A33;
+}
+
+/* ---- Empty state ---- */
+.empty-state {
+    border: 1px dashed #C9CFD6;
+    border-radius: 6px;
+    background: #FAFBFC;
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+    color: #5B6570;
+    margin-bottom: 1.2rem;
+}
+.empty-state .empty-title {
+    font-weight: 600;
+    color: #1F2A33;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+/* ---- Buttons ---- */
+.stButton > button {
+    border-radius: 5px;
+    border: 1px solid #C9CFD6;
+    padding: 0.5rem 1.1rem;
+    font-weight: 500;
+    background-color: #FFFFFF;
+    color: #1F2A33;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.stButton > button:hover {
+    border-color: #3B5A78;
+    color: #3B5A78;
+}
+.stButton > button[kind="primary"] {
+    background-color: #3B5A78;
+    color: #FFFFFF;
+    border: 1px solid #3B5A78;
+}
+.stButton > button[kind="primary"]:hover {
+    background-color: #2E4A63;
+    border-color: #2E4A63;
+    color: #FFFFFF;
+}
+
+/* ---- File uploader ---- */
+[data-testid="stFileUploaderDropzone"] {
+    border: 1px dashed #C9CFD6;
+    border-radius: 6px;
+    background-color: #FAFBFC;
+}
+
+/* ---- Tables / dataframes ---- */
+[data-testid="stDataFrame"] {
+    border: 1px solid #E3E6EA;
+    border-radius: 6px;
+}
+
+/* ---- Status boxes: keep default Streamlit colors but tighten spacing ---- */
+.stAlert {
+    border-radius: 6px;
+}
+
+/* ---- Simple architecture diagram blocks ---- */
+.diagram-box {
+    background: #FFFFFF;
+    border: 1px solid #E3E6EA;
+    border-radius: 6px;
+    padding: 1.2rem;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.85rem;
+    color: #33404A;
+    line-height: 1.55;
+    white-space: pre;
+    overflow-x: auto;
+}
+.thread-box-row {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.7rem 0;
+}
+.thread-box {
+    flex: 1;
+    background: #F5F6F8;
+    border: 1px solid #D5DAE0;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0.55rem 0.3rem;
+    font-size: 0.85rem;
+    color: #33404A;
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+/* ---- Footer ---- */
+.app-footer {
+    margin-top: 2.2rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid #E3E6EA;
+    font-size: 0.82rem;
+    color: #8A929B;
+    text-align: center;
+}
